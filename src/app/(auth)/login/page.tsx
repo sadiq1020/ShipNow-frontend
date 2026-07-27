@@ -32,7 +32,6 @@ export default function LoginPage() {
   });
 
   function onSubmit(values: LoginFormValues) {
-    // No real backend per assignment scope — simulate a session.
     window.localStorage.setItem("shipnow_session", "true");
     if (values.rememberMe) {
       window.localStorage.setItem("shipnow_remember", "true");
@@ -42,16 +41,19 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen w-full flex-col lg:flex-row">
-      {/* Brand panel — stacked full-width on Tablet, side-by-side on Desktop */}
-      <div className="hidden flex-col items-center justify-between bg-brand px-[106px] py-[106px] md:flex md:h-[1024px] md:w-full lg:h-auto lg:w-1/2">
-        <div className="flex items-center gap-3">
-          <LogoSymbol color="#1E1E1E" className="h-[46.96px] w-[46.96px]" />
-          <span className="text-[34.43px] font-black italic tracking-tight text-[#FEFEFE]">
+      {/* Brand panel — stacked on Mobile/Tablet, side-by-side on Desktop */}
+      <div className="flex flex-col items-center justify-between gap-[42px] bg-brand px-8 py-16 md:h-[1024px] md:w-full md:px-[106px] md:py-[106px] lg:h-auto lg:w-1/2">
+        <div className="flex items-center gap-2">
+          <LogoSymbol
+            color="#1E1E1E"
+            className="h-[31.3px] w-[31.3px] md:h-[40px] md:w-[40px]"
+          />
+          <span className="text-[23px] font-black italic uppercase tracking-tight text-[#FEFEFE] md:text-[34px]">
             SHIPNOW
           </span>
         </div>
 
-        <div className="relative h-[499px] w-[553px]">
+        <div className="relative h-[298px] w-full md:h-[499px] md:w-[553px]">
           <Image
             src="/images/login-hero.png"
             alt="Delivery van with packages"
@@ -62,7 +64,7 @@ export default function LoginPage() {
           />
         </div>
 
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex w-full flex-col items-center gap-3 text-center">
           <h2 className="text-[40px] font-extrabold leading-[110%] text-[#FEFEFE]">
             Welcome to ShipNow
           </h2>
@@ -73,10 +75,10 @@ export default function LoginPage() {
       </div>
 
       {/* Form panel */}
-      <div className="flex w-full flex-1 items-center justify-center bg-white px-6 py-12 lg:px-40 lg:py-[120px]">
-        <div className="mx-auto flex w-full max-w-[400px] flex-col gap-8 md:max-w-[480px] lg:max-w-[400px]">
-          <div className="flex flex-col items-center gap-3 text-center">
-            <LogoSymbol color="#856DF3" className="h-[40px] w-[34px]" />
+      <div className="flex w-full flex-1 items-center justify-center bg-white px-8 py-8 md:px-6 md:py-12 lg:px-40 lg:py-[120px]">
+        <div className="mx-auto flex w-full max-w-[326px] flex-col gap-8 md:max-w-[480px] lg:max-w-[400px]">
+          <div className="flex flex-col items-center gap-2 text-center">
+            <LogoSymbol color="#856DF3" className="h-[40px] w-[40px]" />
             <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold text-text-primary">
                 Welcome Back
