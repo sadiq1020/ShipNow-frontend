@@ -41,23 +41,23 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen w-full">
-      {/* Left brand panel */}
-      <div className="hidden w-1/2 flex-col items-center justify-between bg-brand px-[106px] py-[106px] lg:flex">
+    <div className="flex min-h-screen w-full flex-col lg:flex-row">
+      {/* Brand panel — stacked full-width on Tablet, side-by-side on Desktop */}
+      <div className="hidden flex-col items-center justify-between bg-brand px-[106px] py-[106px] md:flex md:h-[1024px] md:w-full lg:h-auto lg:w-1/2">
         <div className="flex items-center gap-3">
-          <LogoSymbol color="#1E1E1E" className="h-[38px] w-[32px]" />
-          <span className="text-[34px] font-black italic tracking-tight text-[#FEFEFE]">
+          <LogoSymbol color="#1E1E1E" className="h-[46.96px] w-[46.96px]" />
+          <span className="text-[34.43px] font-black italic tracking-tight text-[#FEFEFE]">
             SHIPNOW
           </span>
         </div>
 
-        <div className="relative h-[499px] w-[553px]">  
+        <div className="relative h-[499px] w-[553px]">
           <Image
             src="/images/login-hero.png"
             alt="Delivery van with packages"
             fill
             priority
-            sizes="(max-width: 1024px) 50vw, 553px"
+            sizes="(max-width: 1024px) 100vw, 553px"
             className="rounded-2xl object-cover"
           />
         </div>
@@ -72,16 +72,16 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right form panel */}
-      <div className="flex w-full items-center justify-center bg-white px-6 py-12 lg:w-1/2 lg:px-40 lg:py-[120px]">
-        <div className="flex w-full max-w-[400px] flex-col gap-8">
+      {/* Form panel */}
+      <div className="flex w-full flex-1 items-center justify-center bg-white px-6 py-12 lg:px-40 lg:py-[120px]">
+        <div className="mx-auto flex w-full max-w-[400px] flex-col gap-8 md:max-w-[480px] lg:max-w-[400px]">
           <div className="flex flex-col items-center gap-3 text-center">
             <LogoSymbol color="#856DF3" className="h-[40px] w-[34px]" />
-            <div>
+            <div className="flex flex-col gap-2">
               <h1 className="text-2xl font-bold text-text-primary">
                 Welcome Back
               </h1>
-              <p className="mt-1 text-sm text-text-secondary">
+              <p className="text-sm text-text-secondary">
                 Log in to continue managing your logistics with ShipNow
               </p>
             </div>
@@ -90,42 +90,50 @@ export default function LoginPage() {
           <form
             onSubmit={handleSubmit(onSubmit)}
             noValidate
-            className="flex flex-col gap-4"
+            className="flex flex-col gap-8"
           >
-            <FormField
-              label="Email Address"
-              type="email"
-              placeholder="Enter a valid email address"
-              error={errors.email?.message}
-              autoComplete="email"
-              {...register("email")}
-            />
+            <div className="flex flex-col gap-8">
+              <FormField
+                label="Email Address"
+                type="email"
+                placeholder="Enter a valid email address"
+                error={errors.email?.message}
+                autoComplete="email"
+                {...register("email")}
+              />
 
-            <FormField
-              label="Password"
-              type={showPassword ? "text" : "password"}
-              placeholder="Create a strong password"
-              error={errors.password?.message}
-              autoComplete="current-password"
-              rightSlot={
-                <button
-                  type="button"
-                  onClick={() => setShowPassword((v) => !v)}
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                  className="text-text-secondary"
-                >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
-                </button>
-              }
-              {...register("password")}
-            />
+              <FormField
+                label="Password"
+                type={showPassword ? "text" : "password"}
+                placeholder="Create a strong password"
+                error={errors.password?.message}
+                autoComplete="current-password"
+                rightSlot={
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((v) => !v)}
+                    aria-label={
+                      showPassword ? "Hide password" : "Show password"
+                    }
+                    className="text-text-secondary"
+                  >
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
+                  </button>
+                }
+                {...register("password")}
+              />
+            </div>
 
             <div className="flex items-center justify-between">
-              <Checkbox name="rememberMe" control={control} label="Remember Me" />
+              <Checkbox
+                name="rememberMe"
+                control={control}
+                label="Remember Me"
+              />
               <Link
                 href="/forgot-password"
                 className="text-[11px] font-semibold text-brand"
