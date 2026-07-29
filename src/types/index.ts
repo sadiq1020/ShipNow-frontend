@@ -51,6 +51,27 @@ export interface ShipmentRecord {
   status: 'In Transit' | 'Out for Delivery' | 'Delivered' | 'Processing';
 }
 
+export interface ShipmentGridRecord {
+  id: string;
+  trackingId: string;
+  status: 'In Transit' | 'Out for Delivery' | 'Delivered' | 'Processing';
+  modeIcon: 'airplane' | 'truck' | 'ship' | 'train';
+  company: string;
+  category: string;
+  logoType: string;
+  logoColor?: string;
+  origin: {
+    city: string;
+    date: string;
+  };
+  destination: {
+    city: string;
+    date: string;
+  };
+  progress: number;
+  carrier: string;
+}
+
 export interface CategoryDistribution {
   name: string;
   productsCount: number;
