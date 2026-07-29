@@ -1,1 +1,54 @@
-export const shipmentsData = [];
+import { ShipmentRecord } from "@/types";
+
+export const shipmentsData: ShipmentRecord[] = [
+  {
+    id: "1",
+    trackingId: "#SH9283746",
+    company: "TechGear Inc.",
+    category: "Electronics",
+    carrier: "FedEx",
+    route: { from: "Los Angeles, CA", to: "Chicago, IL" },
+    shippingDate: "Mar 20, 2035",
+    status: "In Transit",
+  },
+  {
+    id: "2",
+    trackingId: "#SH9182635",
+    company: "StyleHub Co.",
+    category: "Apparel",
+    carrier: "DHL",
+    route: { from: "New York, NY", to: "Atlanta, GA" },
+    shippingDate: "Mar 19, 2035",
+    status: "Out for Delivery",
+  },
+  {
+    id: "3",
+    trackingId: "#SH9037821",
+    company: "FreshNest",
+    category: "Home & Kitchen",
+    carrier: "UPS",
+    route: { from: "Dallas, TX", to: "Miami, FL" },
+    shippingDate: "Mar 18, 2035",
+    status: "Delivered",
+  },
+  {
+    id: "4",
+    trackingId: "#SH9374652",
+    company: "FitPlus Gear",
+    category: "Sports & Outdoors",
+    carrier: "USPS",
+    route: { from: "Seattle, WA", to: "Denver, CO" },
+    shippingDate: "Mar 21, 2035",
+    status: "Processing",
+  },
+  {
+    id: "5",
+    trackingId: "#SH9457830",
+    company: "AutoParts Pro",
+    category: "Automotive",
+    carrier: "Aramex",
+    route: { from: "Detroit, MI", to: "San Diego, CA" },
+    shippingDate: "Mar 20, 2035",
+    status: "In Transit",
+  },
+];
