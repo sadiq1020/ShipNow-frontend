@@ -38,7 +38,7 @@ export function ShipmentTypeCard() {
     <div className="flex flex-col justify-between rounded-2xl bg-[#FEFEFE] p-5 border border-[#E0E0E0]/80 shadow-2xs w-full h-full">
       {/* Card Header */}
       <div className="flex items-center justify-between">
-        <h3 className="text-base font-extrabold text-[#333333]">
+        <h3 className="text-[16px] font-semibold text-[#333333]">
           Shipment Type
         </h3>
         <button

@@ -23,7 +23,7 @@ export function OverviewCards() {
             className="flex items-center justify-between rounded-xl bg-[#FEFEFE] p-4 border border-[#E0E0E0]/80 shadow-2xs transition-all hover:shadow-xs"
           >
             <div className="flex flex-col gap-1">
-              <span className="text-xs font-semibold text-[#757575]">
+              <span className="text-[12px] font-semibold text-[#757575]">
                 {card.title}
               </span>
               <div className="flex items-baseline gap-1.5">

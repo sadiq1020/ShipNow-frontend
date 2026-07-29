@@ -1,26 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { navigationData } from "@/data/navigation";
 import { LogoSymbol } from "@/components/ui/LogoSymbol";
+import { navigationData } from "@/data/navigation";
+import { clsx } from "clsx";
 import {
-  LayoutDashboard,
   BarChart3,
-  Calendar,
-  Package,
-  TrendingUp,
+  Bell,
   Building2,
+  Calendar,
+  FileText,
+  LayoutDashboard,
+  MessageSquare,
+  Package,
+  Settings,
+  Sparkles,
+  TrendingUp,
   Truck,
   Users,
-  FileText,
-  MessageSquare,
-  Bell,
-  Settings,
   X,
-  Sparkles,
 } from "lucide-react";
-import { clsx } from "clsx";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const iconMap: Record<string, React.ElementType> = {
   LayoutDashboard,
@@ -49,7 +49,9 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
     <ul className={clsx("space-y-1.5", isCompact ? "px-2" : "px-3")}>
       {navigationData.map((item) => {
         const IconComponent = iconMap[item.iconName] || LayoutDashboard;
-        const isActive = pathname === item.href || (item.href === "/dashboard" && pathname === "/");
+        const isActive =
+          pathname === item.href ||
+          (item.href === "/dashboard" && pathname === "/");
 
         if (isCompact) {
           return (
@@ -59,7 +61,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
                 className={clsx(
                   "relative flex h-10 w-10 items-center justify-center rounded-xl transition-all duration-200",
                   isActive
-                    ? "bg-[#856DF3] text-white shadow-md shadow-[#856DF3]/30"
+                    ? "bg-[#E3DDFF] text-[#2A1298]"
                     : "text-[#757575] hover:bg-[#F0F0F0] hover:text-[#333333]"
                 )}
                 title={item.label}
@@ -82,17 +84,19 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
               href={item.href}
               onClick={onMobileClose}
               className={clsx(
-                "group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-semibold transition-all duration-200",
+                "group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-bold transition-all duration-200",
                 isActive
-                  ? "bg-[#856DF3] text-white shadow-sm shadow-[#856DF3]/30"
+                  ? "bg-[#E3DDFF] text-[#2A1298]"
                   : "text-[#757575] hover:bg-[#F5F5F7] hover:text-[#333333]"
               )}
             >
               <div className="flex items-center space-x-3">
                 <IconComponent
                   className={clsx(
-                    "h-4.5 w-4.5 transition-colors stroke-[2]",
-                    isActive ? "text-white" : "text-[#757575] group-hover:text-[#333333]"
+                    "h-4.5 w-4.5 transition-colors stroke-[2.2]",
+                    isActive
+                      ? "text-[#2A1298]"
+                      : "text-[#757575] group-hover:text-[#333333]"
                   )}
                 />
                 <span>{item.label}</span>
@@ -101,7 +105,9 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
                 <span
                   className={clsx(
                     "inline-flex items-center justify-center rounded-full px-2 py-0.5 text-xs font-bold",
-                    isActive ? "bg-white/20 text-white" : "bg-[#856DF3]/15 text-[#856DF3]"
+                    isActive
+                      ? "bg-[#856DF3] text-white"
+                      : "bg-[#856DF3]/15 text-[#856DF3]"
                   )}
                 >
                   {item.badgeCount}
@@ -139,6 +145,7 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
             </span>
           </div>
           <button
+            type="button"
             onClick={onMobileClose}
             className="rounded-lg p-1.5 text-[#757575] hover:bg-[#F0F0F0]"
           >
@@ -171,7 +178,10 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
             <p className="mt-1 text-xs text-gray-300 font-normal">
               Go Pro to access priority support and real-time analytics.
             </p>
-            <button className="mt-3 w-full rounded-xl bg-[#856DF3] py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#6f57e0]">
+            <button
+              type="button"
+              className="mt-3 w-full rounded-xl bg-[#856DF3] py-2 text-xs font-bold text-white shadow-md transition hover:bg-[#6f57e0]"
+            >
               Go Pro Today
             </button>
           </div>
@@ -233,7 +243,10 @@ export function Sidebar({ mobileOpen = false, onMobileClose }: SidebarProps) {
             <p className="mt-1 text-[11px] text-gray-300 font-normal leading-relaxed">
               Go Pro to access priority support, real-time tracking, and full analytics.
             </p>
-            <button className="mt-3 w-full rounded-xl bg-[#856DF3] py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#6f57e0] transition-colors">
+            <button
+              type="button"
+              className="mt-3 w-full rounded-xl bg-[#856DF3] py-2.5 text-xs font-bold text-white shadow-md hover:bg-[#6f57e0] transition-colors"
+            >
               Go Pro Today
             </button>
           </div>

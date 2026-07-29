@@ -47,11 +47,11 @@ export default function DashboardPage() {
       </div>
 
       {/* 3. BOTTOM BLOCK: Recent Shipments Data Table (8 Cols) & Recent Activity Feed (4 Cols) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div className="lg:col-span-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        <div className="lg:col-span-8 flex flex-col">
           <RecentShipmentsTable />
         </div>
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 flex flex-col">
           <RecentActivityCard />
         </div>
       </div>

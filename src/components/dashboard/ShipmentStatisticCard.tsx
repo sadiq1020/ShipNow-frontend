@@ -14,7 +14,7 @@ export function ShipmentStatisticCard() {
       {/* Top Header */}
       <div className="flex items-center justify-between gap-2">
         <div>
-          <h3 className="text-sm font-extrabold text-[#333333]">
+          <h3 className="text-[16px] font-semibold text-[#333333]">
             Shipment Statistic
           </h3>
           <div className="flex items-center gap-2 mt-1">
