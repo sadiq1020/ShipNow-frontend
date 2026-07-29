@@ -18,7 +18,7 @@ export function ShipmentStatisticCard() {
             Shipment Statistic
           </h3>
           <div className="flex items-center gap-2 mt-1">
-            <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-black text-[#333333]">
+            <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-bold text-[#333333]">
               4,352
             </span>
             <span className="flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-600">

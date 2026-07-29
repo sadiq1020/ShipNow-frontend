@@ -5,7 +5,7 @@ import { AlertTriangle, ArrowUpRight, MoreHorizontal, MapPin, CloudRain, FileWar
 
 export function ShipmentAlertsCard() {
   return (
-    <div className="flex flex-col justify-between rounded-xl bg-[#FEFEFE] p-4 border border-[#E0E0E0]/80 shadow-2xs w-full">
+    <div className="flex flex-col justify-between rounded-2xl bg-[#FEFEFE] p-5 border border-[#E0E0E0]/80 shadow-2xs w-full h-full">
       {/* Header */}
       <div>
         <div className="flex items-center justify-between">
@@ -35,7 +35,7 @@ export function ShipmentAlertsCard() {
               key={item.title}
               className="flex flex-col items-center justify-center rounded-xl bg-[#E3DDFF]/40 p-2 text-center border border-[#E3DDFF]"
             >
-              <span className="text-xl font-black text-[#856DF3]">
+              <span className="text-xl font-bold text-[#856DF3]">
                 {item.count}
               </span>
               <span className="text-[9px] font-bold text-[#333333] leading-tight mt-0.5 line-clamp-2">

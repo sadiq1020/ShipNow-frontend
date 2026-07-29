@@ -5,7 +5,7 @@ import { MoreHorizontal } from "lucide-react";
 
 export function ProductCategoriesCard() {
   return (
-    <div className="flex flex-col justify-between rounded-xl bg-[#FEFEFE] p-4 border border-[#E0E0E0]/80 shadow-2xs w-full">
+    <div className="flex flex-col justify-between rounded-2xl bg-[#FEFEFE] p-5 border border-[#E0E0E0]/80 shadow-2xs w-full h-full">
       {/* Header */}
       <div>
         <div className="flex items-center justify-between">
@@ -24,7 +24,7 @@ export function ProductCategoriesCard() {
           <span className="text-xs font-semibold text-[#757575]">
             Total Products
           </span>
-          <span className="text-lg font-black text-[#333333]">1,000</span>
+          <span className="text-lg font-bold text-[#333333]">1,000</span>
         </div>
 
         {/* Integrated Multi-Color Swatch Progress Bar */}

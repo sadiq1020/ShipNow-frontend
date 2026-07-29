@@ -27,7 +27,7 @@ export function OverviewCards() {
                 {card.title}
               </span>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-black text-[#333333] tracking-tight">
+                <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-bold text-[#333333] tracking-tight">
                   {card.value}
                 </span>
                 {card.unit && (

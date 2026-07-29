@@ -30,7 +30,7 @@ export function ProfitSummaryCard() {
       {/* Second Row: Main Value, Badge & Legend */}
       <div className="flex flex-wrap items-center justify-between gap-2 mt-1 mb-4">
         <div className="flex items-center gap-2">
-          <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-black text-[#333333]">
+          <span className="text-[28px] md:text-[24px] lg:text-[28px] leading-tight font-bold text-[#333333]">
             $624,550
           </span>
           <span className="flex items-center rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-bold text-emerald-600">

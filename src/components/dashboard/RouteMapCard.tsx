@@ -7,7 +7,7 @@ export function RouteMapCard() {
   const [shippingId, setShippingId] = useState("");
 
   return (
-    <div className="relative flex flex-col justify-between overflow-hidden rounded-xl bg-[#FEFEFE] border border-[#E0E0E0]/80 shadow-2xs w-full min-h-[300px]">
+    <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl bg-[#FEFEFE] border border-[#E0E0E0]/80 shadow-2xs w-full min-h-[300px] h-full">
       {/* Map Header Controls */}
       <div className="absolute top-3 left-3 right-3 z-10 flex items-center justify-between gap-2">
         <div className="relative flex-1 max-w-xs">
