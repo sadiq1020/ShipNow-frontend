@@ -17,7 +17,9 @@ export function ProfitSummaryCard() {
             Profit Summary
           </h3>
           <div className="flex items-center gap-1.5 mt-0.5">
-            <span className="text-xl font-black text-[#333333]">$624,550</span>
+            <span className="text-[24px] leading-tight font-black text-[#333333]">
+              $624,550
+            </span>
             <span className="flex items-center rounded-md bg-emerald-50 px-1.5 py-0.5 text-[10px] font-bold text-emerald-600">
               <TrendingUp className="mr-0.5 h-3 w-3" /> +5.62%
             </span>
@@ -69,20 +71,27 @@ export function ProfitSummaryCard() {
                 key={item.month}
                 className="group relative flex flex-col items-center flex-1 justify-end h-full cursor-pointer"
               >
-                {/* May Highlight Tooltip */}
+                {/* May Highlight Tooltip — light gray #F0F0F0, vertical layout */}
                 {item.highlighted && (
-                  <div className="absolute -top-10 z-20 rounded-lg bg-[#333333] px-2.5 py-1 text-center shadow-xl">
-                    <div className="flex items-center justify-center gap-2 text-[10px] font-bold text-white whitespace-nowrap">
-                      <span className="flex items-center gap-1">
-                        <span className="h-1.5 w-1.5 rounded-full bg-[#856DF3]" />
-                        Revenue: ${item.revenue.toLocaleString()}
+                  <div className="absolute -top-14 z-20 rounded-lg bg-[#F0F0F0] px-2 py-2 shadow-md border border-[#E0E0E0]/60 whitespace-nowrap">
+                    <div className="flex flex-col gap-1 text-[10px] font-bold text-[#333333]">
+                      <span className="flex items-center gap-1.5">
+                        <span className="h-2 w-2 rounded-full bg-[#856DF3] shrink-0" />
+                        Revenue
+                        <span className="font-black ml-auto">
+                          ${item.revenue.toLocaleString()}
+                        </span>
                       </span>
-                      <span className="flex items-center gap-1 text-gray-300">
-                        <span className="h-1.5 w-1.5 rounded-full bg-gray-400" />
-                        Cost: ${item.cost.toLocaleString()}
+                      <span className="flex items-center gap-1.5">
+                        <span className="h-2 w-2 rounded-full bg-[#E0E0E0] shrink-0" />
+                        Cost
+                        <span className="font-black ml-auto">
+                          ${item.cost.toLocaleString()}
+                        </span>
                       </span>
                     </div>
-                    <div className="absolute left-1/2 -bottom-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-[#333333]"></div>
+                    {/* Caret arrow */}
+                    <div className="absolute left-1/2 -bottom-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-[#F0F0F0] border-r border-b border-[#E0E0E0]/60"></div>
                   </div>
                 )}
 

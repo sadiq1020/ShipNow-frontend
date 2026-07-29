@@ -23,7 +23,7 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
         </button>
 
         <div>
-          <span className="text-xs font-semibold text-[#757575] tracking-wider block">
+          <span className="text-base font-semibold text-[#757575] tracking-wider block">
             Hello John!
           </span>
           <h1 className="text-xl sm:text-2xl font-extrabold text-[#333333] tracking-tight">
@@ -52,7 +52,7 @@ export function Header({ onMobileMenuOpen }: HeaderProps) {
           className="h-10 px-4 rounded-lg bg-[#333333] hover:bg-[#1A1A1A] active:scale-[0.98] text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-sm shrink-0"
         >
           <Plus className="h-4 w-4 stroke-[2.5]" />
-          <span>New Shipping</span>
+          <span>Add New Shipping</span>
         </button>
       </div>
     </header>
