@@ -6,7 +6,7 @@ A pixel-perfect, fully responsive logistics dashboard built with **Next.js 16**,
 
 ## 🔗 Live Demo
 
-**[https://ship-now-frontend.vercel.app](https://ship-now-frontend.vercel.app)**
+**[https://ship-now-frontend.vercel.app/](https://ship-now-frontend.vercel.app/)**
 
 ---
 
