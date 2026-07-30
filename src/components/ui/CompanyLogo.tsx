@@ -109,9 +109,11 @@ export function CompanyLogo({
       )}
 
       {logoType === "quickparts" && (
-        // Diagonal Stripes Mark
-        <svg className="h-7 w-7 text-[#856DF3] fill-current" viewBox="0 0 32 32">
-          <path d="M6 24L16 8H22L12 24H6ZM14 24L24 8H28L18 24H14Z" />
+        // Diagonal Slanting Stripes Mark (Figma exact match)
+        <svg className="h-7 w-7" viewBox="0 0 32 32">
+          <path d="M4 24L10 8H14L8 24H4Z" fill="#856DF3" />
+          <path d="M12 24L18 8H22L16 24H12Z" fill="#E55353" />
+          <path d="M20 24L26 8H30L24 24H20Z" fill="#E55353" />
         </svg>
       )}
 

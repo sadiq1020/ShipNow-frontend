@@ -54,12 +54,15 @@ export interface ShipmentRecord {
 export interface ShipmentGridRecord {
   id: string;
   trackingId: string;
-  status: 'In Transit' | 'Out for Delivery' | 'Delivered' | 'Processing';
+  status: 'In Transit' | 'Out for Delivery' | 'Delivered' | 'Processing' | 'Completed' | 'Pending' | 'Delivery';
   modeIcon: 'airplane' | 'truck' | 'ship' | 'train';
+  modeLabel?: string;
   company: string;
   category: string;
   logoType: string;
   logoColor?: string;
+  weight?: string;
+  productCategory?: string;
   origin: {
     city: string;
     date: string;
