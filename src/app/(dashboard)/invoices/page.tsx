@@ -13,14 +13,15 @@ import {
 import { Search } from "lucide-react";
 
 export default function InvoicesPage() {
-  // Default selected invoice is INV-1008 (ModaWear) to match Figma screenshots
   const [selectedInvoice, setSelectedInvoice] =
-    useState<InvoiceDetailsData | null>(
-      mockInvoicesData.find((inv) => inv.id === "INV-1008") || mockInvoicesData[0]
-    );
+    useState<InvoiceDetailsData | null>(null);
 
   const handleSelectInvoice = (inv: InvoiceDetailsData) => {
-    setSelectedInvoice(inv);
+    if (selectedInvoice?.id === inv.id) {
+      setSelectedInvoice(null);
+    } else {
+      setSelectedInvoice(inv);
+    }
   };
 
   const handleCloseDetails = () => {
@@ -56,15 +57,15 @@ export default function InvoicesPage() {
       {/* 1. Top 4 Summary KPI Cards */}
       <InvoicesKpiCards />
 
-      {/* 2. Main Content Region: Table & Details Panel */}
-
       {/* ========================================================= */}
       {/* DESKTOP VIEW (xl: >= 1280px): Side-by-side Table & Details */}
       {/* ========================================================= */}
-      <div className="hidden xl:grid grid-cols-12 gap-5 items-start w-full">
+      <div className="hidden xl:grid grid-cols-12 gap-5 items-stretch w-full">
         <div
           className={
-            selectedInvoice ? "col-span-7 transition-all" : "col-span-12 transition-all"
+            selectedInvoice
+              ? "col-span-7 flex flex-col h-full transition-all"
+              : "col-span-12 flex flex-col h-full transition-all"
           }
         >
           <InvoicesTable
@@ -74,7 +75,7 @@ export default function InvoicesPage() {
         </div>
 
         {selectedInvoice && (
-          <div className="col-span-5 transition-all">
+          <div className="col-span-5 flex flex-col h-full transition-all">
             <InvoiceDetailsCard
               invoice={selectedInvoice}
               onClose={handleCloseDetails}
@@ -84,21 +85,32 @@ export default function InvoicesPage() {
       </div>
 
       {/* ========================================================= */}
-      {/* TABLET & MOBILE VIEW (< 1280px):                           */}
-      {/* Shows only Invoices Table first. When an invoice is        */}
-      {/* checked/selected, Invoice Details appears over/under it   */}
-      {/* with a back arrow to return to table.                      */}
+      {/* TABLET VIEW (md to xl):                                    */}
+      {/* 1. Full-width Invoices table (ALL columns) — always shown  */}
+      {/* 2. Below the table: side-by-side section appears when an   */}
+      {/*    invoice is selected — narrow list left + details right   */}
       {/* ========================================================= */}
-      <div className="flex xl:hidden flex-col gap-5 w-full relative">
+      <div className="hidden md:flex xl:hidden flex-col gap-5 w-full">
+        {/* Full-width Invoices Table — always visible */}
         <InvoicesTable
           selectedInvoiceId={selectedInvoice?.id || null}
           onSelectInvoice={handleSelectInvoice}
         />
 
-        {/* Tablet Overlay Modal / Floating Detail Panel when selected */}
+        {/* Below the table: side-by-side compact list + details panel */}
         {selectedInvoice && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/40 backdrop-blur-xs xl:hidden overflow-y-auto">
-            <div className="w-full max-w-[706px] my-auto">
+          <div className="flex gap-0 w-full items-stretch rounded-2xl border border-[#E0E0E0]/80 shadow-2xs bg-[#FEFEFE] overflow-hidden">
+            {/* Left: Narrow compact invoice list */}
+            <div className="w-[227px] min-w-[227px] shrink-0 overflow-hidden border-r border-[#E0E0E0]/60">
+              <InvoicesTable
+                selectedInvoiceId={selectedInvoice.id}
+                onSelectInvoice={handleSelectInvoice}
+                compact={true}
+              />
+            </div>
+
+            {/* Right: Invoice Details panel */}
+            <div className="flex-1 overflow-y-auto">
               <InvoiceDetailsCard
                 invoice={selectedInvoice}
                 onClose={handleCloseDetails}
@@ -106,6 +118,26 @@ export default function InvoicesPage() {
               />
             </div>
           </div>
+        )}
+      </div>
+
+      {/* ========================================================= */}
+      {/* MOBILE VIEW (< md / < 768px):                              */}
+      {/* Full-width table, then full-width details below when       */}
+      {/* selected.                                                  */}
+      {/* ========================================================= */}
+      <div className="flex md:hidden flex-col gap-5 w-full">
+        <InvoicesTable
+          selectedInvoiceId={selectedInvoice?.id || null}
+          onSelectInvoice={handleSelectInvoice}
+        />
+
+        {selectedInvoice && (
+          <InvoiceDetailsCard
+            invoice={selectedInvoice}
+            onClose={handleCloseDetails}
+            isOverlay={true}
+          />
         )}
       </div>
     </div>

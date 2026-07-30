@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
-import { Search, SlidersHorizontal, ArrowUpDown, FileText, Check } from "lucide-react";
 import { CompanyLogo } from "@/components/ui/CompanyLogo";
-import { InvoiceDetailsData } from "./InvoiceDetailsCard";
 import { clsx } from "clsx";
+import { ArrowUpDown, Check, FileText, Search, SlidersHorizontal } from "lucide-react";
+import { useState } from "react";
+import { InvoiceDetailsData } from "./InvoiceDetailsCard";
 
 export const mockInvoicesData: InvoiceDetailsData[] = [
   {
@@ -474,7 +474,7 @@ export function InvoicesTable({
                   {/* Company Logo & Name */}
                   <td className="py-3 px-3">
                     <div className="flex items-center gap-2">
-                      <CompanyLogo name={inv.companyName} className="h-5 w-5 shrink-0" />
+                      <CompanyLogo companyName={inv.companyName} className="h-5 w-5 shrink-0" />
                       <span className="font-bold text-[#333333]">
                         {inv.companyName}
                       </span>

@@ -35,34 +35,34 @@ export function InvoicesKpiCards() {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 w-full">
       {cards.map((card) => {
         const Icon = card.icon;
 
         return (
           <div
             key={card.id}
-            className="flex items-center justify-between rounded-2xl bg-[#FEFEFE] p-4 sm:p-5 border border-[#E0E0E0]/80 shadow-2xs"
+            className="flex items-center justify-between rounded-2xl bg-[#FEFEFE] p-4 sm:p-5 border border-[#E0E0E0]/80 shadow-2xs w-full"
           >
-            <div className="flex items-center gap-3.5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#856DF3] text-white shadow-xs shrink-0">
-                <Icon className="h-6 w-6 stroke-[2.2]" />
-              </div>
+            {/* Left Side: Icon Container */}
+            <div className="flex h-12 w-12 sm:h-13 sm:w-13 items-center justify-center rounded-2xl bg-[#856DF3] text-white shadow-xs shrink-0">
+              <Icon className="h-6 w-6 stroke-[2.2]" />
+            </div>
 
-              <div className="flex flex-col">
-                <span className="text-xs font-semibold text-[#757575]">
-                  {card.title}
+            {/* Right Side: Right-Aligned Text Content Pushed to Right Border */}
+            <div className="flex flex-col items-end text-right">
+              <span className="text-xs font-medium text-[#757575]">
+                {card.title}
+              </span>
+              <span className="text-2xl sm:text-3xl font-bold text-[#333333] tracking-tight mt-1">
+                {card.amount}
+              </span>
+              <div className="flex items-center gap-1 mt-1 text-[11px] text-[#757575]">
+                <span>from</span>
+                <span className="font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-md text-[10px]">
+                  {card.count}
                 </span>
-                <span className="text-xl sm:text-2xl font-bold text-[#333333] tracking-tight mt-0.5">
-                  {card.amount}
-                </span>
-                <div className="flex items-baseline gap-1 mt-0.5 text-[11px] text-[#757575]">
-                  <span>from</span>
-                  <span className="font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-md">
-                    {card.count}
-                  </span>
-                  <span>Invoices</span>
-                </div>
+                <span>Invoices</span>
               </div>
             </div>
           </div>
