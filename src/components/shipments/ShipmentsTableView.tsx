@@ -30,7 +30,7 @@ export function ShipmentsTableView({ records }: ShipmentsTableViewProps) {
       case "Delivery":
       case "In Transit":
       case "Out for Delivery":
-        return "bg-[#E3DDFF] text-[#333333]";
+        return "bg-[#E3DDFF] text-[#2A1298]";
       case "Completed":
       case "Delivered":
         return "bg-emerald-100 text-emerald-700";
@@ -115,7 +115,7 @@ export function ShipmentsTableView({ records }: ShipmentsTableViewProps) {
                 {/* Shipping ID & Mode */}
                 <td className="py-3.5 px-3.5">
                   <div className="flex flex-col">
-                    <span className="font-bold text-[#856DF3] text-xs">
+                    <span className="font-bold text-[#2A1298] text-xs">
                       {row.trackingId}
                     </span>
                     <span className="flex items-center gap-1 text-[10px] font-normal text-[#757575] mt-0.5">
@@ -168,7 +168,7 @@ export function ShipmentsTableView({ records }: ShipmentsTableViewProps) {
                         (Origin)
                       </span>
                     </span>
-                    <span className="font-bold text-[#856DF3] mt-0.5">
+                    <span className="font-bold text-[#2A1298] mt-0.5">
                       {row.destination.city}{" "}
                       <span className="font-normal text-[10px] text-[#757575]">
                         (Destination)
@@ -186,7 +186,7 @@ export function ShipmentsTableView({ records }: ShipmentsTableViewProps) {
                         (ATD)
                       </span>
                     </span>
-                    <span className="font-semibold text-[#856DF3] mt-0.5">
+                    <span className="font-semibold text-[#2A1298] mt-0.5">
                       {row.destination.date}{" "}
                       <span className="font-normal text-[10px] text-[#757575]">
                         (ETA)
@@ -224,7 +224,7 @@ export function ShipmentsTableView({ records }: ShipmentsTableViewProps) {
                           ? "bg-emerald-500"
                           : row.status === "Pending" || row.status === "Processing"
                           ? "bg-amber-500"
-                          : "bg-[#856DF3]"
+                          : "bg-[#2A1298]"
                       }`}
                     />
                     {row.status}
