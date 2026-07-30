@@ -327,14 +327,16 @@ export const mockInvoicesData: InvoiceDetailsData[] = [
   },
 ];
 
-interface InvoicesTableProps {
+export interface InvoicesTableProps {
   selectedInvoiceId: string | null;
   onSelectInvoice: (invoice: InvoiceDetailsData) => void;
+  compact?: boolean;
 }
 
 export function InvoicesTable({
   selectedInvoiceId,
   onSelectInvoice,
+  compact = false,
 }: InvoicesTableProps) {
   const [searchQuery, setSearchQuery] = useState("");
 
